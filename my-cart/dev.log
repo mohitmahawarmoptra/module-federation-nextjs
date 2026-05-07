@@ -1,0 +1,14 @@
+
+> my-cart@0.1.0 dev
+> next dev -p 3001
+
+   ▲ Next.js 15.5.15
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.0.181:3001
+
+ ✓ Starting...
+ ✓ Ready in 10s
+ ○ Compiling / ...
+ ✓ Compiled / in 10.5s (626 modules)
+ GET / 200 in 11386ms
+[?25h
