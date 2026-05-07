@@ -3,6 +3,10 @@ const remoteApps = {
     global: "myCart",
     url: process.env.NEXT_PUBLIC_MY_CART_URL || "http://localhost:3001",
   },
+  myProducts: {
+    global: "myProducts",
+    url: process.env.NEXT_PUBLIC_MY_PRODUCTS_URL || "http://localhost:3002",
+  },
 };
 
 function createRemotes(isServer) {

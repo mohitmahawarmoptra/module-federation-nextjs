@@ -1,9 +1,10 @@
 # Module Federation Frontend
 
-This workspace contains two Next.js applications connected through Module Federation:
+This workspace contains three Next.js applications connected through Module Federation:
 
 - `my-app` is the host application.
 - `my-cart` is a remote application, also called a micro frontend.
+- `my-products` is a remote application for product listing and details.
 
 The host loads the cart UI from the remote app at runtime. This keeps `my-cart` independently owned and deployable, while still allowing it to appear inside `my-app`.
 
@@ -81,6 +82,17 @@ module-federations-frontend/
       globals.css
     next.config.ts
     package.json
+
+  my-products/
+    components/
+      ProductBrowser.tsx
+    pages/
+      _app.tsx
+      index.tsx
+    styles/
+      globals.css
+    next.config.ts
+    package.json
 ```
 
 ## How `my-cart` Works as a Remote
@@ -142,6 +154,10 @@ const remoteApps = {
   myCart: {
     global: "myCart",
     url: process.env.NEXT_PUBLIC_MY_CART_URL || "http://localhost:3001",
+  },
+  myProducts: {
+    global: "myProducts",
+    url: process.env.NEXT_PUBLIC_MY_PRODUCTS_URL || "http://localhost:3002",
   },
 };
 ```
@@ -208,11 +224,17 @@ For `my-cart`, the dev port is `3001`:
 "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3001"
 ```
 
+For `my-products`, the dev port is `3002`:
+
+```json
+"dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3002"
+```
+
 This environment variable is required by `@module-federation/nextjs-mf`.
 
 ## Running the Apps
 
-Open two terminals.
+Open three terminals.
 
 Terminal 1:
 
@@ -222,6 +244,13 @@ npm run dev
 ```
 
 Terminal 2:
+
+```bash
+cd my-products
+npm run dev
+```
+
+Terminal 3:
 
 ```bash
 cd my-app
@@ -234,26 +263,30 @@ Then open:
 http://localhost:3000
 ```
 
-The host app should render the cart micro frontend from:
+The host app should render the cart and products micro frontends from:
 
 ```text
 http://localhost:3001
+http://localhost:3002
 ```
 
 You can also open the remote directly:
 
 ```text
 http://localhost:3001
+http://localhost:3002
 ```
 
 ## Runtime Flow
 
 1. `my-cart` starts on port `3001`.
-2. `my-cart` exposes `./Cart` through its `remoteEntry.js`.
-3. `my-app` starts on port `3000`.
-4. `my-app` reads the remote configuration from `config/remotes.js`.
-5. `my-app` loads `myCart/Cart` at runtime.
-6. The cart UI is rendered inside the host app.
+2. `my-products` starts on port `3002`.
+3. `my-cart` exposes `./Cart` through its `remoteEntry.js`.
+4. `my-products` exposes `./Products` through its `remoteEntry.js`.
+5. `my-app` starts on port `3000`.
+6. `my-app` reads the remote configuration from `config/remotes.js`.
+7. `my-app` loads `myCart/Cart` and `myProducts/Products` at runtime.
+8. The remote UIs are rendered inside the host app.
 
 ## How This Is Scalable
 
@@ -275,7 +308,7 @@ const remoteApps = {
   },
   myProfile: {
     global: "myProfile",
-    url: process.env.NEXT_PUBLIC_MY_PROFILE_URL || "http://localhost:3002",
+    url: process.env.NEXT_PUBLIC_MY_PROFILE_URL || "http://localhost:3003",
   },
 };
 ```
@@ -309,22 +342,25 @@ declare module "myProfile/Profile" {
 
 ## Environment Variables
 
-The cart remote URL can be changed without editing code:
+Remote URLs can be changed without editing code:
 
 ```bash
 NEXT_PUBLIC_MY_CART_URL=https://cart.example.com
+NEXT_PUBLIC_MY_PRODUCTS_URL=https://products.example.com
 ```
 
 The host will then load:
 
 ```text
 https://cart.example.com/_next/static/chunks/remoteEntry.js
+https://products.example.com/_next/static/chunks/remoteEntry.js
 ```
 
 for browser bundles and:
 
 ```text
 https://cart.example.com/_next/static/ssr/remoteEntry.js
+https://products.example.com/_next/static/ssr/remoteEntry.js
 ```
 
 for server bundles.
@@ -337,9 +373,10 @@ We achieved Module Federation by:
 - Enabling local Webpack with `NEXT_PRIVATE_LOCAL_WEBPACK=true`.
 - Making `my-cart` a remote app.
 - Exposing `my-cart/components/Cart.tsx` as `myCart/Cart`.
+- Making `my-products` a remote app.
+- Exposing `my-products/components/ProductBrowser.tsx` as `myProducts/Products`.
 - Making `my-app` a host app.
 - Registering remote apps in `my-app/config/remotes.js`.
-- Loading the remote cart component dynamically inside `my-app`.
+- Loading the remote cart and products components dynamically inside `my-app`.
 - Adding TypeScript module declarations for remote imports.
 - Using the Pages Router because the installed federation package does not support the App Router.
-

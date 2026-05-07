@@ -4,3 +4,10 @@ declare module "myCart/Cart" {
   const Cart: ComponentType;
   export default Cart;
 }
+
+declare module "myProducts/Products" {
+  import type { ComponentType } from "react";
+
+  const Products: ComponentType;
+  export default Products;
+}

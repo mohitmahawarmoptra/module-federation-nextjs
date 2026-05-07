@@ -1,11 +1,11 @@
 {
-  "name": "my-cart",
+  "name": "my-products",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3001",
+    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3002",
     "build": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
-    "start": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next start -p 3001"
+    "start": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next start -p 3002"
   },
   "dependencies": {
     "@module-federation/nextjs-mf": "^8.8.66",
@@ -19,9 +19,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cross-env": "^10.1.0",
-    "enhanced-resolve": "^5.18.3",
+    "enhanced-resolve": "5.18.3",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "webpack": "^5.97.1"
+    "webpack": "5.97.1"
   }
 }

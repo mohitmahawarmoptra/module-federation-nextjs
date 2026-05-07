@@ -5,12 +5,24 @@ const CartRemote = dynamic(() => import("myCart/Cart"), {
   loading: () => <div className="remote-loading">Loading cart...</div>,
 });
 
+const ProductsRemote = dynamic(() => import("myProducts/Products"), {
+  ssr: false,
+  loading: () => <div className="remote-loading">Loading products...</div>,
+});
+
 const microFrontends = [
   {
     name: "Cart",
     scope: "myCart",
     description: "Loaded from the my-cart remote app on port 3001.",
     Component: CartRemote,
+  },
+  {
+    name: "Products",
+    scope: "myProducts",
+    description:
+      "Loaded from the my-products remote app on port 3002 with paginated product data.",
+    Component: ProductsRemote,
   },
 ];
 
