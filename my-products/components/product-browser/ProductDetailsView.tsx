@@ -13,7 +13,7 @@ export function ProductDetailsView({
   return (
     <section className="product-detail-panel" aria-label="Product details">
       {detailState === "idle" && (
-        <div className="product-message">Select a product.</div>
+        <div className="product-message">Select a product to view details.</div>
       )}
 
       {detailState === "loading" && (
@@ -28,43 +28,54 @@ export function ProductDetailsView({
 
       {detailState === "success" && productDetails && (
         <article>
-          <img
-            className="product-detail-image"
-            src={productDetails.images[0] || productDetails.thumbnail}
-            alt={productDetails.title}
-          />
+          <div className="product-detail-image-wrapper">
+            <img
+              className="product-detail-image"
+              src={productDetails.images[0] || productDetails.thumbnail}
+              alt={productDetails.title}
+            />
+          </div>
+          
           <div className="product-detail-header">
-            <div>
-              <p className="product-kicker">
-                {productDetails.brand || productDetails.category}
-              </p>
-              <h3>{productDetails.title}</h3>
-            </div>
+            <h3>{productDetails.title}</h3>
             <strong>{formatPrice.format(productDetails.price)}</strong>
           </div>
+          
           <p className="product-description">{productDetails.description}</p>
+          
           <dl className="product-stats">
-            <div>
+            <div className="product-stats-badge">
               <dt>Rating</dt>
-              <dd>{productDetails.rating}</dd>
+              <dd>★ {productDetails.rating}</dd>
             </div>
-            <div>
+            <div className="product-stats-badge">
               <dt>Stock</dt>
               <dd>{productDetails.stock}</dd>
             </div>
-            <div>
+            <div className="product-stats-badge">
               <dt>Discount</dt>
               <dd>{productDetails.discountPercentage}%</dd>
             </div>
           </dl>
+          
           <div className="product-fulfillment">
-            <span>
-              {productDetails.warrantyInformation || "Warranty available"}
-            </span>
-            <span>
-              {productDetails.shippingInformation || "Shipping available"}
-            </span>
+            <div className="product-fulfillment-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              <span>{productDetails.warrantyInformation || "Warranty available"}</span>
+            </div>
+            <div className="product-fulfillment-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              <span>{productDetails.shippingInformation || "Shipping available"}</span>
+            </div>
           </div>
+          
+          <button className="add-to-cart-btn" type="button">
+            Add to Cart
+          </button>
         </article>
       )}
     </section>

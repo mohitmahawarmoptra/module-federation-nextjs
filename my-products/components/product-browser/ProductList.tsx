@@ -52,13 +52,16 @@ export function ProductList({
                 type="button"
                 onClick={() => setSelectedProductId(product.id)}
               >
-                <img src={product.thumbnail} alt="" />
-                <span>
+                <div className="product-button-image-wrapper">
+                  <img src={product.thumbnail} alt={product.title} />
+                </div>
+                <div className="product-button-content">
+                  <small>{product.category}</small>
                   <strong>{product.title}</strong>
-                  <small>
-                    {product.category} - {formatPrice.format(product.price)}
-                  </small>
-                </span>
+                  <span className="product-button-price">
+                    {formatPrice.format(product.price)}
+                  </span>
+                </div>
               </button>
             </li>
           ))}

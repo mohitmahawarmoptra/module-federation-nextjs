@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
         <nav className="layout-nav" aria-label="Primary navigation">
           <Link href="/">Home</Link>
           <Link href="/cart">Cart</Link>
-          <a href="https://dummyjson.com/products?limit=10" target="_blank" rel="noreferrer">
+          <a href="https://dummyjson.com/products?limit=12" target="_blank" rel="noreferrer">
             API
           </a>
         </nav>

@@ -10,6 +10,32 @@ export default function ProductBrowser() {
   const [searchInput, setSearchInput] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(ALL_CATEGORIES);
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
+
+  useEffect(() => {
+    try {
+      const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
+      if (savedTheme) {
+        setTheme(savedTheme);
+      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+        setTheme("light");
+      }
+    } catch (e) {
+      console.warn("localStorage not available");
+    }
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    document.body.setAttribute("data-theme", theme);
+    try {
+      localStorage.setItem("theme", theme);
+    } catch (e) {}
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === "dark" ? "light" : "dark"));
+  };
 
   const searchQuery = useDebouncedValue(searchInput.trim());
   const { categories, categoryState, categoryError } = useCategories();
@@ -56,18 +82,38 @@ export default function ProductBrowser() {
   const activeFilterLabel = searchQuery
     ? `Search: ${searchQuery}`
     : selectedCategory === ALL_CATEGORIES
-    ? "All products"
-    : `Category: ${selectedCategory}`;
+      ? "All products"
+      : `Category: ${selectedCategory}`;
 
   return (
-    <div className="product-browser">
+    <div className="product-browser" data-theme={theme}>
       <div className="product-toolbar">
         <div>
           <p className="product-kicker">Products remote</p>
           <h3>Product catalog</h3>
         </div>
-        <div className="product-page-summary">
-          Page {page} of {visiblePageCount}
+        <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+          <button 
+            type="button"
+            onClick={toggleTheme}
+            style={{
+              background: 'var(--panel)',
+              border: '1px solid var(--line)',
+              borderRadius: '999px',
+              padding: '8px 16px',
+              color: 'var(--foreground)',
+              cursor: 'pointer',
+              fontWeight: 600,
+              fontSize: '14px',
+              backdropFilter: 'blur(12px)',
+              boxShadow: 'var(--shadow-panel)'
+            }}
+          >
+            {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
+          </button>
+          <div className="product-page-summary">
+            Page {page} of {visiblePageCount}
+          </div>
         </div>
       </div>
 
