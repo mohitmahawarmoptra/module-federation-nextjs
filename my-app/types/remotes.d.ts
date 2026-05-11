@@ -11,3 +11,16 @@ declare module "myProducts/Products" {
   const Products: ComponentType;
   export default Products;
 }
+
+declare module "../config/remotes" {
+  export const remoteApps: {
+    myCart: {
+      global: string;
+      url: string;
+    };
+    myProducts: {
+      global: string;
+      url: string;
+    };
+  };
+}

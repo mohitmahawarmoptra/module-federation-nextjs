@@ -1,14 +1,19 @@
 
 > my-app@0.1.0 dev
-> next dev -p 3000
+> cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev -p 3000
 
    ▲ Next.js 15.5.15
    - Local:        http://localhost:3000
    - Network:      http://192.168.0.181:3000
 
  ✓ Starting...
- ✓ Ready in 13.5s
+ ✓ Ready in 7.1s
  ○ Compiling / ...
- ✓ Compiled / in 9.9s (626 modules)
- GET / 200 in 10500ms
-[?25h
+ ✓ Compiled / in 7.2s (756 modules)
+ GET / 200 in 7835ms
+ GET / 200 in 307ms
+ GET / 200 in 260ms
+ GET / 200 in 243ms
+ GET / 200 in 241ms
+ GET / 200 in 236ms
+ GET / 200 in 229ms
