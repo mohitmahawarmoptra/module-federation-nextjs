@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import dynamic from "next/dynamic";
 
 const CartRemote = dynamic(() => import("myCart/Cart"), {
@@ -16,6 +17,7 @@ const microFrontends = [
 
 export default function Index() {
   return (
+    <Layout>
     <main className="shell">
       <section className="intro"> 
         <p className="eyebrow">Cart Page</p>
@@ -43,5 +45,6 @@ export default function Index() {
         ))}
       </section>
     </main>
+    </Layout>
   );
 }

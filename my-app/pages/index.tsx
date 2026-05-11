@@ -1,14 +1,8 @@
+import Layout from "../components/Layout";
 import FederatedRemote from "../components/FederatedRemote";
 import { remoteApps } from "../config/remotes";
 
 const microFrontends = [
-  // {
-  //   name: "Cart",
-  //   scope: "myCart",
-  //   description: "Loaded from the my-cart remote app on port 3001.",
-  //   module: "./Cart",
-  //   loadingText: "Loading cart...",
-  // },
   {
     name: "Products",
     scope: "myProducts",
@@ -31,37 +25,38 @@ function getRemoteEntryUrl(scope: keyof typeof remoteApps) {
 
 export default function Home() {
   return (
-    <main className="shell">
-      <section className="intro">
-        <p className="eyebrow">Host app</p>
-        <h1>my-app</h1>
-        <p>
-          This app is the module federation host. Remote micro frontends are
-          registered once in the federation config and rendered as independent
-          sections here.
-        </p>
-      </section>
+    <Layout>
+      <div className="shell">
+        <section className="intro">
+          <p className="eyebrow">Host app</p>
+          <h1>Products catalog</h1>
+          <p>
+            This host app loads the remote product module in a shared layout
+            with a navigation header and footer.
+          </p>
+        </section>
 
-      <section className="remote-grid" aria-label="Micro frontends">
-        {microFrontends.map(({ name, scope, description, module, loadingText }) => (
-          <article className="remote-panel" key={scope}>
-            <div className="remote-panel-header">
-              <div>
-                <p className="eyebrow">{scope}</p>
-                <h2>{name}</h2>
+        <section className="remote-grid" aria-label="Micro frontends">
+          {microFrontends.map(({ name, scope, description, module, loadingText }) => (
+            <article className="remote-panel" key={scope}>
+              <div className="remote-panel-header">
+                <div>
+                  <p className="eyebrow">{scope}</p>
+                  <h2>{name}</h2>
+                </div>
+                <span>Remote</span>
               </div>
-              <span>Remote</span>
-            </div>
-            <p>{description}</p>
-            <FederatedRemote
-              global={remoteApps[scope].global}
-              loadingText={loadingText}
-              module={module}
-              remoteEntryUrl={getRemoteEntryUrl(scope)}
-            />
-          </article>
-        ))}
-      </section>
-    </main>
+              <p>{description}</p>
+              <FederatedRemote
+                global={remoteApps[scope].global}
+                loadingText={loadingText}
+                module={module}
+                remoteEntryUrl={getRemoteEntryUrl(scope)}
+              />
+            </article>
+          ))}
+        </section>
+      </div>
+    </Layout>
   );
 }

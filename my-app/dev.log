@@ -17,3 +17,39 @@
  GET / 200 in 241ms
  GET / 200 in 236ms
  GET / 200 in 229ms
+ ✓ Compiled in 5.6s (756 modules)
+ GET / 200 in 3757ms
+ GET / 200 in 238ms
+ GET / 200 in 253ms
+ GET / 200 in 245ms
+ GET / 200 in 239ms
+ GET / 200 in 232ms
+ GET / 200 in 236ms
+ GET / 200 in 236ms
+ GET / 200 in 233ms
+ GET / 200 in 238ms
+ GET / 200 in 241ms
+ GET / 200 in 250ms
+ GET / 200 in 238ms
+ GET / 200 in 250ms
+ ○ Compiling /cart ...
+ ✓ Compiled /cart in 3.6s (768 modules)
+ GET /cart 200 in 4067ms
+ GET / 200 in 250ms
+ GET / 200 in 238ms
+ GET / 200 in 232ms
+ GET / 200 in 286ms
+ GET / 200 in 242ms
+ GET / 200 in 346ms
+ GET / 200 in 237ms
+ GET / 200 in 258ms
+ GET / 200 in 250ms
+ GET / 200 in 246ms
+ GET / 200 in 259ms
+ GET /cart 200 in 501ms
+ GET / 200 in 295ms
+ GET / 500 in 4560ms
+ ○ Compiling /_error ...
+ GET / 500 in 18525ms
+ GET / 500 in 71ms
+[?25h

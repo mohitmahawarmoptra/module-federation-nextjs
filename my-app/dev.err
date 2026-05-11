@@ -11,3 +11,171 @@
 <i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: /_next/mf-manifest.json 
 <i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
 <i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: /_next/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: /_next/mf-manifest.json 
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[1]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[2]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\styles\globals.css|pages-dir-browser': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<e> [NextFederationPlugin] [ nextjs-mf ] File at C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server does not exist.
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
+ ⨯ ./styles/globals.css:324:1
+Syntax error: C:\Users\Moptra\Documents\module-federation-nextjs\my-app\styles\globals.css Unexpected }
+
+ [90m 322 | [39m  text-align[33m:[39m left[33m;[39m
+ [90m 323 | [39m  width[33m:[39m 100%[33m;[39m
+[1m[31m>[39m[22m[90m 324 | [39m[33m}[39m
+ [90m     | [39m[1m[31m^[39m[22m
+ [90m 325 | [39m
+ [90m 326 | [39m[33m.product-button[39m[33m:[39mhover,
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[1]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[2]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\styles\globals.css|pages-dir-browser': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<w> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest will use absolute path resolution via its host at runtime, reason: publicPath='auto'
+<w> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest will use absolute path resolution via its host at runtime, reason: publicPath='auto'
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: /_next/mf-manifest.json 
+ ⨯ ./styles/globals.css:324:1
+Syntax error: C:\Users\Moptra\Documents\module-federation-nextjs\my-app\styles\globals.css Unexpected }
+
+ [90m 322 | [39m  text-align[33m:[39m left[33m;[39m
+ [90m 323 | [39m  width[33m:[39m 100%[33m;[39m
+[1m[31m>[39m[22m[90m 324 | [39m[33m}[39m
+ [90m     | [39m[1m[31m^[39m[22m
+ [90m 325 | [39m
+ [90m 326 | [39m[33m.product-button[39m[33m:[39mhover,
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\cache\webpack\client-development-fallback\0.pack.gz_' -> 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\cache\webpack\client-development-fallback\0.pack.gz'
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[1]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[2]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\styles\globals.css|pages-dir-browser': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: /_next/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: {auto}/static/chunks/mf-manifest.json 
+<i> [Module Federation Manifest Plugin] [ Module Federation Manifest Plugin ] Manifest Link: /_next/mf-manifest.json 
+ ⨯ [Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+ ⨯ [Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+ ⨯ [Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|javascript/auto|C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\css-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[1]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\node_modules\next\dist\build\webpack\loaders\postcss-loader\src\index.js??ruleSet[1].rules[8].oneOf[15].use[2]!C:\Users\Moptra\Documents\module-federation-nextjs\my-app\styles\globals.css|pages-dir-browser': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\cache\webpack\client-development\0.pack.gz_' -> 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\cache\webpack\client-development\0.pack.gz'
+ ⨯ [Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+ ⨯ [Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+ ⨯ [Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+ ⨯ [Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}
+[Error: EBUSY: resource busy or locked, open 'C:\Users\Moptra\Documents\module-federation-nextjs\my-app\.next\server\webpack-runtime.js'] {
+  errno: -4082,
+  code: 'EBUSY',
+  syscall: 'open',
+  path: 'C:\\Users\\Moptra\\Documents\\module-federation-nextjs\\my-app\\.next\\server\\webpack-runtime.js'
+}

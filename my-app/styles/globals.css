@@ -258,9 +258,70 @@ p {
   grid-template-columns: 58px minmax(0, 1fr);
   min-height: 76px;
   padding: 8px;
-  text-align: left;
-  width: 100%;
 }
+
+.layout-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-header,
+.layout-footer {
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 24px;
+}
+
+.layout-footer {
+  border-top: 1px solid var(--line);
+  border-bottom: none;
+  margin-top: auto;
+}
+
+.layout-brand {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.layout-nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.layout-nav a {
+  color: var(--foreground);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.layout-nav a:hover,
+.layout-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.layout-main {
+  flex: 1;
+  padding: 32px 24px;
+}
+
+.layout-footer p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .product-button:hover,
 .product-button.selected {
