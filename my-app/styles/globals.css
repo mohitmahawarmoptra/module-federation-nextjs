@@ -13,6 +13,22 @@
   --shadow-panel: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --h1-gradient-1: #ffffff;
+  --h1-gradient-2: #a0b0c0;
+}
+
+[data-theme='light'] {
+  --background: #f6f7fb;
+  --foreground: #172033;
+  --muted: #667085;
+  --panel: #ffffff;
+  --line: #d7dce5;
+  --accent: #1677ff;
+  --accent-secondary: #4facfe;
+  --accent-glow: rgba(22, 119, 255, 0.15);
+  --shadow-panel: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  --h1-gradient-1: #0f172a;
+  --h1-gradient-2: #334155;
 }
 
 * {
@@ -67,9 +83,15 @@ h1 {
   margin-bottom: 16px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #ffffff 0%, #a0b0c0 100%);
+  background: linear-gradient(135deg, var(--h1-gradient-1) 0%, var(--h1-gradient-2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all var(--transition-normal);
+}
+
+.app-name-header {
+  color: var(--foreground);
 }
 
 h2 {

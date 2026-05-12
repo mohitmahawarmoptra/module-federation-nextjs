@@ -29,7 +29,7 @@ export default function Home() {
       <div className="shell">
         <section className="intro">
           <p className="eyebrow">Host app</p>
-          <h1>Products catalog</h1>
+          <h1 className="app-name-header">Products catalog</h1>
           <p>
             This host app loads the remote product module in a shared layout
             with a navigation header and footer.
