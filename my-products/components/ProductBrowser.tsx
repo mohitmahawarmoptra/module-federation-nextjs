@@ -5,37 +5,11 @@ import { ProductFilters } from "./product-browser/ProductFilters";
 import { ProductList } from "./product-browser/ProductList";
 import { ProductDetailsView } from "./product-browser/ProductDetailsView";
 
-export default function ProductBrowser() {
+export default function ProductBrowser({ onProductClick }: { onProductClick?: (id: number) => void }) {
   const [page, setPage] = useState(1);
   const [searchInput, setSearchInput] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(ALL_CATEGORIES);
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-
-  useEffect(() => {
-    try {
-      const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-      if (savedTheme) {
-        setTheme(savedTheme);
-      } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-        setTheme("light");
-      }
-    } catch (e) {
-      console.warn("localStorage not available");
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    document.body.setAttribute("data-theme", theme);
-    try {
-      localStorage.setItem("theme", theme);
-    } catch (e) {}
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === "dark" ? "light" : "dark"));
-  };
 
   const searchQuery = useDebouncedValue(searchInput.trim());
   const { categories, categoryState, categoryError } = useCategories();
@@ -65,19 +39,29 @@ export default function ProductBrowser() {
     }
   }, [page, visiblePageCount]);
 
-  // Select first product when list loads
+  // Select first product when list loads, only if we are displaying details inline
   useEffect(() => {
-    if (listState === "success" && products.length > 0) {
-      setSelectedProductId(products[0].id);
-    } else if (listState === "success" && products.length === 0) {
-      setSelectedProductId(null);
+    if (!onProductClick) {
+      if (listState === "success" && products.length > 0) {
+        setSelectedProductId(products[0].id);
+      } else if (listState === "success" && products.length === 0) {
+        setSelectedProductId(null);
+      }
     }
-  }, [listState, products]);
+  }, [listState, products, onProductClick]);
 
   function clearFilters() {
     setSearchInput("");
     setSelectedCategory(ALL_CATEGORIES);
   }
+
+  const handleProductSelect = (id: number) => {
+    if (onProductClick) {
+      onProductClick(id);
+    } else {
+      setSelectedProductId(id);
+    }
+  };
 
   const activeFilterLabel = searchQuery
     ? `Search: ${searchQuery}`
@@ -86,31 +70,13 @@ export default function ProductBrowser() {
       : `Category: ${selectedCategory}`;
 
   return (
-    <div className="product-browser" data-theme={theme}>
+    <div className="product-browser">
       <div className="product-toolbar">
         <div>
           <p className="product-kicker">Products remote</p>
           <h3>Product catalog</h3>
         </div>
         <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-          <button 
-            type="button"
-            onClick={toggleTheme}
-            style={{
-              background: 'var(--panel)',
-              border: '1px solid var(--line)',
-              borderRadius: '999px',
-              padding: '8px 16px',
-              color: 'var(--foreground)',
-              cursor: 'pointer',
-              fontWeight: 600,
-              fontSize: '14px',
-              backdropFilter: 'blur(12px)',
-              boxShadow: 'var(--shadow-panel)'
-            }}
-          >
-            {theme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode"}
-          </button>
           <div className="product-page-summary">
             Page {page} of {visiblePageCount}
           </div>
@@ -137,24 +103,29 @@ export default function ProductBrowser() {
         <span>{totalProducts} results</span>
       </div>
 
-      <div className="product-content-grid">
+      <div 
+        className="product-content-grid" 
+        style={onProductClick ? { gridTemplateColumns: "1fr" } : undefined}
+      >
         <ProductList
           listState={listState}
           listError={listError}
           products={products}
           selectedProductId={selectedProductId}
-          setSelectedProductId={setSelectedProductId}
+          setSelectedProductId={handleProductSelect}
           page={page}
           setPage={setPage}
           pages={pages}
           visiblePageCount={visiblePageCount}
         />
 
-        <ProductDetailsView
-          detailState={detailState}
-          detailError={detailError}
-          productDetails={productDetails}
-        />
+        {!onProductClick && (
+          <ProductDetailsView
+            detailState={detailState}
+            detailError={detailError}
+            productDetails={productDetails}
+          />
+        )}
       </div>
     </div>
   );

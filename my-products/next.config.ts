@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
         remotes: {},
         exposes: {
           "./Products": "./components/ProductBrowser.tsx",
+          "./ProductDetail": "./components/ProductDetailStandalone.tsx",
         },
         shared: {},
         extraOptions: {

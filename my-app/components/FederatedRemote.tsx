@@ -88,8 +88,9 @@ export default function FederatedRemote({
   module,
   remoteEntryUrl,
   loadingText,
-}: FederatedRemoteProps) {
-  const [Component, setComponent] = useState<ComponentType | null>(null);
+  ...props
+}: FederatedRemoteProps & Record<string, any>) {
+  const [Component, setComponent] = useState<ComponentType<any> | null>(null);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -129,5 +130,5 @@ export default function FederatedRemote({
     return <div className="remote-loading">{loadingText}</div>;
   }
 
-  return <Component />;
+  return <Component {...props} />;
 }
